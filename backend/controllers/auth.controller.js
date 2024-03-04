@@ -40,6 +40,8 @@ export const signup = async (req, res) => {
         username: newUser.username,
         avatar: newUser.avatar
       });
+    } else {
+      res.status(400).json({ error: "Invalid user data" });
     }
 
   } catch (err) {
