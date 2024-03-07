@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  min-height: 110vh;
+  min-height: 100vh;
   background: url("assets/beach.jpg");
   background-repeat: no-repeat;
   background-size: cover;
