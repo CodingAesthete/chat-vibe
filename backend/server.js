@@ -5,8 +5,8 @@ import messageRoutes from "./routes/message.routes.js"
 import userRoutes from "./routes/user.routes.js"
 import mongoose from "mongoose";
 import cookieParser from 'cookie-parser';
+import { app, server } from "./sockets/socket.js";
 
-const app = express();
 
 dotenv.config();
 
@@ -25,6 +25,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.listen(3001, () => {
-  console.log(`Server is running on port: 3001!`);
+server.listen(3000, () => {
+  console.log(`Server is running on port: 3000!`);
 })
