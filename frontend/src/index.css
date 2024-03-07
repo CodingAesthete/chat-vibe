@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 body {
+  min-height: 110vh;
   background: url("assets/beach.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+@media (max-width: 450px) {
+  body {
+    min-height: 100vh;
+  }
 }
 
 ::-webkit-scrollbar {
