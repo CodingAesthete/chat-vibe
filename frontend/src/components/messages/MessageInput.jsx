@@ -4,6 +4,7 @@ import useSendMessage from "../../hooks/useSendMessage";
 
 const MessageInput = () => {
   const [message, setMessage] = useState("");
+  const [inputFocused, setInputFocused] = useState(false); // Track input focus state
   const { loading, sendMessage } = useSendMessage();
 
   const handleSubmit = async (e) => {
@@ -13,15 +14,25 @@ const MessageInput = () => {
     setMessage("");
   };
 
+  const handleInputFocus = () => {
+    setInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setInputFocused(false);
+  };
+
   return (
     <form className='px-4 my-3' onSubmit={handleSubmit}>
-      <div className='w-full relative'>
+      <div className={`w-full relative ${inputFocused ? 'input-focused' : ''}`}>
         <input
           type='text'
           className='border text-md rounded-lg block w-full p-2.5  bg-slate-600 border-gray-600 text-white'
           placeholder='Send a message'
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
         />
         <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>
           {loading ? <div className='loading loading-spinner'></div> : <BsSend className="text-white" />}

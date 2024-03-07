@@ -3,17 +3,19 @@
 @tailwind utilities;
 
 body {
-  min-height: 100vh;
-  background: url("assets/beach.jpg");
-  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background-image: url('assets/beach.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  height: 100vh;
+  /* Set initial height */
 }
 
-@media (max-width: 450px) {
-  body {
-    min-height: 130vh;
+
+@media (max-width: 630px) {
+  .input-focused {
+    height: auto;
   }
 }
 
