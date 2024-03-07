@@ -4,7 +4,7 @@ import Sidebar from '../../components/sidebar/Sidebar'
 
 export default function Home() {
   return (
-    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-0'>
+    <div className='flex flex-col w-full sm:w-auto sm:flex-row sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-0'>
       <Sidebar />
       <MessageContainer />
     </div>
