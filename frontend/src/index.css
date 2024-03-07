@@ -13,7 +13,7 @@ body {
 
 @media (max-width: 450px) {
   body {
-    min-height: 110vh;
+    min-height: 130vh;
   }
 }
 
